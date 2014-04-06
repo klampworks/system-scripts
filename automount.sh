@@ -3,6 +3,8 @@
 #device, then decrypt and mount it.
 
 uuid="00000000-0000-0000-0000-000000000000"
+label="my-hdd"
+mount_point="/mnt"
 
 #Root please.
 sudo -v
@@ -23,7 +25,7 @@ do
 	fi
 
 	#Decrypt and mount.
-	sudo cryptsetup luksOpen $enc_root 3t
-	sudo mount /dev/mapper/3t /mnt
+	sudo cryptsetup luksOpen $enc_root $label
+	sudo mount /dev/mapper/$label $mount_point
 	exit
 done
