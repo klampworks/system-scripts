@@ -23,7 +23,7 @@ then
 	setup $2
 
 	sudo mkdir -p $mnt_point
-	sudo mount -o loop,offset=$(($offset * 512)) $img_path $mnt_point
+	sudo mount -o loop,offset=$(($offset * 512)) $2 $mnt_point
 
 elif [ "$1" == "umount" ]
 then
